@@ -252,5 +252,39 @@ public class UpdateStylesheetsMojoTest {
 		assertFalse(
 				(new File(projectCopy.getAbsolutePath()
 					+ "/target/skip-execution-project-1.0-SNAPSHOT/css/")).exists());
-	}
+    }
+
+    /**
+     * Test method for
+	 * {@link nl.geodienstencentrum.maven.plugin.sass.compiler.UpdateStylesheetsMojo#execute() }
+     * .
+     *
+     * @throws Exception if any
+     * @see
+     * nl.geodienstencentrum.maven.plugin.sass.compiler.UpdateStylesheetsMojo#execute()
+     */
+    @Test
+    public void testCompile_maven_sass_umlaut_test() throws Exception {
+        final File projectCopy = this.resources
+                .getBasedir("maven-sass-umlaut-test");
+        final File pom = new File(projectCopy, "pom.xml");
+        assumeNotNull("POM file should not be null.", pom);
+        assumeTrue("POM file should exist as file.",
+                pom.exists() && pom.isFile());
+
+        final UpdateStylesheetsMojo myMojo = (UpdateStylesheetsMojo) this.rule
+                .lookupConfiguredMojo(projectCopy, "update-stylesheets");
+        assumeNotNull(myMojo);
+
+        // test if execution was succesful, if not fail
+        myMojo.execute();
+        TestResources.assertDirectoryContents(
+                new File(projectCopy.getAbsolutePath()
+                        + "/target/classes/META-INF/resources/css2/"),
+                "compiled.css.map", "compiled.css");
+		// this may fail when line endings differ, eg. on Windows
+        // set up git to check out with native file endings
+        TestResources.assertFileContents(projectCopy, "expected.css",
+                "target/classes/META-INF/resources/css2/compiled.css");
+    }
 }
