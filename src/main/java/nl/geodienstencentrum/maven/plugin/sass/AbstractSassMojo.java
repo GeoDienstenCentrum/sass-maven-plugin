@@ -234,6 +234,12 @@ public abstract class AbstractSassMojo extends AbstractMojo {
 		final Log log = this.getLog();
 		log.debug("Execute Sass Ruby script:\n\n" + sassScript + "\n\n");
 
+		System.setProperty("org.jruby.embed.localcontext.scope", "threadsafe");
+		System.setProperty("jruby.compile.fastest", "true");
+		System.setProperty("jruby.jit.codeCache", buildDirectory + File.pathSeparator + "jruby.codeCache");
+		System.setProperty("jruby.native.enabled", "false");
+		System.setProperty("jruby.aot.loadClasses", "true");
+
 		final ScriptingContainer scriptingContainer = new ScriptingContainer(LocalContextScope.SINGLETHREAD);
 		final CompilerCallback compilerCallback = new CompilerCallback(log);
 
