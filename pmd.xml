@@ -2,8 +2,8 @@
 <pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
-    version="6.4.0" timestamp="2018-10-02T21:10:11.534">
-<file name="/home/mprins/workspace/sass-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/sass/AbstractSassMojo.java">
+    version="6.4.0" timestamp="2018-10-16T20:00:37.249">
+<file name="/home/mprins/workspace/sass-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/sass/AbstractSassMojo.java">
 <violation beginline="60" endline="497" begincolumn="17" endcolumn="1" rule="ModifiedCyclomaticComplexity" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.sass" class="AbstractSassMojo" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_design.html#modifiedcyclomaticcomplexity" priority="3">
 The class 'AbstractSassMojo' has a Modified Cyclomatic Complexity of 5 (Highest = 13).
 </violation>
@@ -263,7 +263,7 @@ Avoid instantiating new objects inside loops
 Local variable 'fos' could be declared final
 </violation>
 </file>
-<file name="/home/mprins/workspace/sass-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/sass/Resource.java">
+<file name="/home/mprins/workspace/sass-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/sass/Resource.java">
 <violation beginline="38" endline="38" begincolumn="27" endcolumn="32" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="nl.geodienstencentrum.maven.plugin.sass" class="Resource" variable="source" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 </violation>
@@ -304,7 +304,7 @@ Found 'DD'-anomaly for variable 'destDir' (lines '91'-'94').
 Avoid instantiating new objects inside loops
 </violation>
 </file>
-<file name="/home/mprins/workspace/sass-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/sass/compiler/CompilerCallback.java">
+<file name="/home/mprins/workspace/sass-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/sass/compiler/CompilerCallback.java">
 <violation beginline="30" endline="30" begincolumn="25" endcolumn="36" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="nl.geodienstencentrum.maven.plugin.sass.compiler" class="CompilerCallback" variable="compileError" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 </violation>
@@ -312,7 +312,7 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 </violation>
 </file>
-<file name="/home/mprins/workspace/sass-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/sass/compiler/UpdateStylesheetsMojo.java">
+<file name="/home/mprins/workspace/sass-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/sass/compiler/UpdateStylesheetsMojo.java">
 <violation beginline="51" endline="77" begincolumn="16" endcolumn="9" rule="NcssCount" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.sass.compiler" class="UpdateStylesheetsMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_design.html#ncsscount" priority="3">
 The method 'execute()' has a NCSS line count of 17.
 </violation>
@@ -383,7 +383,7 @@ Useless parentheses.
 Useless parentheses.
 </violation>
 </file>
-<file name="/home/mprins/workspace/sass-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/sass/compiler/WatchMojo.java">
+<file name="/home/mprins/workspace/sass-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/sass/compiler/WatchMojo.java">
 <violation beginline="36" endline="36" begincolumn="17" endcolumn="75" rule="UseLocaleWithCaseConversions" ruleset="Error Prone" package="nl.geodienstencentrum.maven.plugin.sass.compiler" class="WatchMojo" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_errorprone.html#uselocalewithcaseconversions" priority="3">
 When doing a String.toLowerCase()/toUpperCase() call, use a Locale
 </violation>
@@ -391,81 +391,93 @@ When doing a String.toLowerCase()/toUpperCase() call, use a Locale
 StringBuffer constructor is initialized with size 16, but has at least 85 characters appended.
 </violation>
 </file>
-<file name="/home/mprins/workspace/sass-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/sass/report/SCSSLintMojo.java">
+<file name="/home/mprins/workspace/sass-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/sass/report/SCSSLintMojo.java">
 <violation beginline="58" endline="58" begincolumn="22" endcolumn="31" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" variable="outputFile" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 </violation>
 <violation beginline="80" endline="80" begincolumn="38" endcolumn="63" rule="LooseCoupling" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#loosecoupling" priority="3">
 Avoid using implementation types like 'HashMap'; use the interface instead
 </violation>
-<violation beginline="129" endline="195" begincolumn="16" endcolumn="9" rule="NcssCount" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_design.html#ncsscount" priority="3">
-The method 'execute()' has a NCSS line count of 43.
+<violation beginline="129" endline="199" begincolumn="16" endcolumn="9" rule="NcssCount" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'execute()' has a NCSS line count of 46.
 </violation>
-<violation beginline="129" endline="195" begincolumn="16" endcolumn="9" rule="CyclomaticComplexity" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
-The method 'execute()' has a cyclomatic complexity of 14.
+<violation beginline="129" endline="199" begincolumn="16" endcolumn="9" rule="CyclomaticComplexity" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'execute()' has a cyclomatic complexity of 15.
 </violation>
-<violation beginline="138" endline="138" begincolumn="17" endcolumn="85" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+<violation beginline="131" endline="131" begincolumn="25" endcolumn="31" rule="OnlyOneReturn" ruleset="Code Style" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="133" endline="133" begincolumn="17" endcolumn="45" rule="PrematureDeclaration" ruleset="Code Style" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" variable="log" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_codestyle.html#prematuredeclaration" priority="3">
+Avoid declaring a variable if it is unreferenced before a possible exit point.
+</violation>
+<violation beginline="133" endline="199" begincolumn="27" endcolumn="45" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" variable="log" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'log' (lines '133'-'199').
+</violation>
+<violation beginline="135" endline="135" begincolumn="17" endcolumn="61" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" variable="sourceDirs" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'sourceDirs' could be declared final
+</violation>
+<violation beginline="142" endline="142" begincolumn="17" endcolumn="85" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="138" endline="138" begincolumn="17" endcolumn="85" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+<violation beginline="142" endline="142" begincolumn="17" endcolumn="85" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="143" endline="143" begincolumn="17" endcolumn="66" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+<violation beginline="147" endline="147" begincolumn="17" endcolumn="66" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="143" endline="143" begincolumn="17" endcolumn="66" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+<violation beginline="147" endline="147" begincolumn="17" endcolumn="66" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="148" endline="148" begincolumn="17" endcolumn="58" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" variable="context" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+<violation beginline="152" endline="152" begincolumn="17" endcolumn="58" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" variable="context" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'context' could be declared final
 </violation>
-<violation beginline="150" endline="150" begincolumn="17" endcolumn="58" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" variable="argv" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+<violation beginline="154" endline="154" begincolumn="17" endcolumn="58" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" variable="argv" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'argv' could be declared final
 </violation>
-<violation beginline="156" endline="156" begincolumn="33" endcolumn="69" rule="OptimizableToArrayCall" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#optimizabletoarraycall" priority="3">
+<violation beginline="160" endline="160" begincolumn="33" endcolumn="69" rule="OptimizableToArrayCall" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#optimizabletoarraycall" priority="3">
 This call to Collection.toArray() may be optimizable
 </violation>
-<violation beginline="159" endline="159" begincolumn="25" endcolumn="96" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+<violation beginline="163" endline="163" begincolumn="25" endcolumn="96" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="159" endline="159" begincolumn="25" endcolumn="96" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+<violation beginline="163" endline="163" begincolumn="25" endcolumn="96" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="160" endline="162" begincolumn="25" endcolumn="63" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" variable="result" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+<violation beginline="164" endline="166" begincolumn="25" endcolumn="63" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" variable="result" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'result' could be declared final
 </violation>
-<violation beginline="163" endline="163" begincolumn="25" endcolumn="75" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+<violation beginline="167" endline="167" begincolumn="25" endcolumn="75" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="163" endline="163" begincolumn="25" endcolumn="75" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+<violation beginline="167" endline="167" begincolumn="25" endcolumn="75" rule="GuardLogStatement" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="205" endline="205" begincolumn="34" endcolumn="58" rule="ConsecutiveLiteralAppends" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="buildBasicSassScript" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#consecutiveliteralappends" priority="3">
+<violation beginline="209" endline="209" begincolumn="34" endcolumn="58" rule="ConsecutiveLiteralAppends" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="buildBasicSassScript" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#consecutiveliteralappends" priority="3">
 StringBuffer (or StringBuilder).append is called 3 consecutive times with literals. Use a single append with a single combined String.
 </violation>
-<violation beginline="205" endline="205" begincolumn="17" endcolumn="59" rule="ConsecutiveAppendsShouldReuse" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="buildBasicSassScript" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#consecutiveappendsshouldreuse" priority="3">
+<violation beginline="209" endline="209" begincolumn="17" endcolumn="59" rule="ConsecutiveAppendsShouldReuse" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="buildBasicSassScript" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#consecutiveappendsshouldreuse" priority="3">
 StringBuffer (or StringBuilder).append is called consecutively without reusing the target variable.
 </violation>
-<violation beginline="206" endline="206" begincolumn="17" endcolumn="63" rule="ConsecutiveAppendsShouldReuse" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="buildBasicSassScript" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#consecutiveappendsshouldreuse" priority="3">
+<violation beginline="210" endline="210" begincolumn="17" endcolumn="63" rule="ConsecutiveAppendsShouldReuse" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="buildBasicSassScript" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#consecutiveappendsshouldreuse" priority="3">
 StringBuffer (or StringBuilder).append is called consecutively without reusing the target variable.
 </violation>
-<violation beginline="211" endline="211" begincolumn="42" endcolumn="59" rule="ConsecutiveLiteralAppends" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="buildBasicSassScript" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#consecutiveliteralappends" priority="3">
+<violation beginline="215" endline="215" begincolumn="42" endcolumn="59" rule="ConsecutiveLiteralAppends" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="buildBasicSassScript" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#consecutiveliteralappends" priority="3">
 StringBuffer (or StringBuilder).append is called 3 consecutive times with literals. Use a single append with a single combined String.
 </violation>
-<violation beginline="215" endline="215" begincolumn="34" endcolumn="76" rule="ConsecutiveLiteralAppends" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="buildBasicSassScript" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#consecutiveliteralappends" priority="3">
+<violation beginline="219" endline="219" begincolumn="34" endcolumn="76" rule="ConsecutiveLiteralAppends" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="buildBasicSassScript" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#consecutiveliteralappends" priority="3">
 StringBuffer (or StringBuilder).append is called 2 consecutive times with literals. Use a single append with a single combined String.
 </violation>
-<violation beginline="215" endline="215" begincolumn="17" endcolumn="77" rule="ConsecutiveAppendsShouldReuse" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="buildBasicSassScript" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#consecutiveappendsshouldreuse" priority="3">
+<violation beginline="219" endline="219" begincolumn="17" endcolumn="77" rule="ConsecutiveAppendsShouldReuse" ruleset="Performance" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="buildBasicSassScript" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_performance.html#consecutiveappendsshouldreuse" priority="3">
 StringBuffer (or StringBuilder).append is called consecutively without reusing the target variable.
 </violation>
-<violation beginline="223" endline="230" begincolumn="25" endcolumn="97" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="getSourceDirs" variable="source" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
-Found 'UR'-anomaly for variable 'source' (lines '223'-'230').
+<violation beginline="227" endline="234" begincolumn="25" endcolumn="97" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="getSourceDirs" variable="source" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'UR'-anomaly for variable 'source' (lines '227'-'234').
 </violation>
-<violation beginline="224" endline="224" begincolumn="17" endcolumn="50" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="getSourceDirs" variable="dirs" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+<violation beginline="228" endline="228" begincolumn="17" endcolumn="50" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintMojo" method="getSourceDirs" variable="dirs" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'dirs' could be declared final
 </violation>
 </file>
-<file name="/home/mprins/workspace/sass-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/sass/report/SCSSLintReportGenerator.java">
+<file name="/home/mprins/workspace/sass-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/sass/report/SCSSLintReportGenerator.java">
 <violation beginline="41" endline="41" begincolumn="28" endcolumn="31" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintReportGenerator" variable="sink" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 </violation>
@@ -512,7 +524,7 @@ There is log block not surrounded by if
 There is log block not surrounded by if
 </violation>
 </file>
-<file name="/home/mprins/workspace/sass-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/sass/report/SCSSLintReportMojo.java">
+<file name="/home/mprins/workspace/sass-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/sass/report/SCSSLintReportMojo.java">
 <violation beginline="56" endline="56" begincolumn="37" endcolumn="47" rule="UnusedPrivateField" ruleset="Best Practices" package="nl.geodienstencentrum.maven.plugin.sass.report" class="SCSSLintReportMojo" variable="sassOptions" externalInfoUrl="https://pmd.github.io/pmd-6.4.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
 Avoid unused private fields such as 'sassOptions'.
 </violation>

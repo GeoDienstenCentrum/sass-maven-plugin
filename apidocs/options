@@ -4,18 +4,18 @@
 'UTF-8'
 -protected
 -sourcepath
-'/home/mprins/workspace/sass-maven-plugin/src/main/java:/home/mprins/workspace/sass-maven-plugin/target/generated-sources/plugin:/home/mprins/workspace/sass-maven-plugin/target/generated-sources/annotations'
+'/home/mprins/workspace/sass-maven-plugin/target/checkout/src/main/java:/home/mprins/workspace/sass-maven-plugin/target/checkout/target/generated-sources/plugin:/home/mprins/workspace/sass-maven-plugin/target/checkout/target/generated-sources/annotations'
 -author
 -bottom
 'Copyright &#169; 2014&#x2013;2018 <a href="https://github.com/GeoDienstenCentrum">GeoDienstenCentrum</a>. All rights reserved.'
 -charset
 'UTF-8'
 -d
-'/home/mprins/workspace/sass-maven-plugin/target/site/apidocs'
+'/home/mprins/workspace/sass-maven-plugin/target/checkout/target/site/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
-'Sass Compiler Plugin 3.6.1-SNAPSHOT API'
+'Sass Compiler Plugin 3.6.1 API'
 -link
 'https://maven.apache.org/ref/3.5.4/maven-core/apidocs'
 -link
@@ -33,7 +33,7 @@
 -link
 'https://maven.apache.org/shared/maven-reporting-impl/apidocs'
 -linkoffline
-'https://docs.oracle.com/javase/8/docs/api' '/home/mprins/workspace/sass-maven-plugin/target/javadoc-bundle-options'
+'https://docs.oracle.com/javase/8/docs/api' '/home/mprins/workspace/sass-maven-plugin/target/checkout/target/javadoc-bundle-options'
 -packagesheader
 'sass-maven-plugin'
 -tag
@@ -41,4 +41,4 @@
 -use
 -version
 -windowtitle
-'Sass Compiler Plugin 3.6.1-SNAPSHOT API'
+'Sass Compiler Plugin 3.6.1 API'
