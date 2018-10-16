@@ -749,7 +749,7 @@
 					</reportSet>
 				</reportSets>
 				<configuration>
-					<dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+					<dependencyDetailsEnabled>true</dependencyDetailsEnabled>
 				</configuration>
 			</plugin>
 			<plugin>
