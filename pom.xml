@@ -163,7 +163,7 @@
 		<maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
 		<maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
 		<maven-changes-plugin.version>2.12.1</maven-changes-plugin.version>
-		<dependency-check-maven.version>3.3.2</dependency-check-maven.version>
+		<dependency-check-maven.version>3.3.4</dependency-check-maven.version>
 		<taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
 		<maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
 		<maven-pmd-plugin.version>3.10.0</maven-pmd-plugin.version>
