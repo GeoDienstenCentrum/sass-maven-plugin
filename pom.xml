@@ -166,7 +166,7 @@
 		<dependency-check-maven.version>3.3.2</dependency-check-maven.version>
 		<taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
 		<maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
-		<maven-pmd-plugin.version>3.10.0</maven-pmd-plugin.version>
+		<maven-pmd-plugin.version>3.11.0</maven-pmd-plugin.version>
 		<findbugs-maven-plugin.version>3.0.5</findbugs-maven-plugin.version>
 	</properties>
 	<dependencyManagement />
