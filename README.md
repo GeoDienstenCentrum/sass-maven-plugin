@@ -18,3 +18,5 @@ For more details: https://GeoDienstenCentrum.github.io/sass-maven-plugin/plugin-
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/GeoDienstenCentrum/sass-maven-plugin.svg)](http://isitmaintained.com/project/GeoDienstenCentrum/sass-maven-plugin "Average time to resolve an issue")
 
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&identifier=27342322)](https://dependabot.com)
+
+[![DepShield Badge](https://depshield.sonatype.org/badges/GeoDienstenCentrum/sass-maven-plugin/depshield.svg)](https://depshield.github.io)
