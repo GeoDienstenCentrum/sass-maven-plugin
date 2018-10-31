@@ -19,10 +19,10 @@ os:
 jdk:
   - oraclejdk8
   - oraclejdk9
-  - oraclejdk10
   - oraclejdk11
   - oraclejdk-ea
   - openjdk8
+  - openjdk10
 
 matrix:
   fast_finish: true
