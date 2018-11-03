@@ -109,7 +109,7 @@
 	<contributors />
 	<mailingLists />
 	<prerequisites>
-		<maven>3.2.5</maven>
+		<maven>3.3.9</maven>
 	</prerequisites>
 	<scm>
 		<connection>scm:git:git://github.com/GeoDienstenCentrum/${project.artifactId}.git</connection>
@@ -148,7 +148,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<sass.version>3.6.0</sass.version>
 		<jruby.version>9.2.0.0</jruby.version>
-		<maven-libs.version>3.5.4</maven-libs.version>
+		<maven-libs.version>3.6.0</maven-libs.version>
 		<scss-lint.version>0.57.1</scss-lint.version>
 		<bourbon.version>5.1.0</bourbon.version>
 		<maven.version />
@@ -159,7 +159,7 @@
 		<skipUnitTests>false</skipUnitTests>
 		<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
 		<versions-maven-plugin.version>2.7</versions-maven-plugin.version>
-		<maven-plugin-plugin.version>3.5.2</maven-plugin-plugin.version>
+		<maven-plugin-plugin.version>3.6.0</maven-plugin-plugin.version>
 		<maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
 		<maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
 		<maven-changes-plugin.version>2.12.1</maven-changes-plugin.version>
@@ -179,7 +179,7 @@
 		<dependency>
 			<groupId>org.apache.maven.plugin-tools</groupId>
 			<artifactId>maven-plugin-annotations</artifactId>
-			<version>3.5.2</version>
+			<version>${maven-libs.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -354,7 +354,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-install-plugin</artifactId>
-					<version>2.5.2</version>
+					<version>3.0.0-M1</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-javadoc-plugin</artifactId>
@@ -443,7 +443,7 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-deploy-plugin</artifactId>
-					<version>2.8.2</version>
+					<version>3.0.0-M1</version>
 				</plugin>
 				<plugin>
 					<groupId>ru.concerteza.buildnumber</groupId>

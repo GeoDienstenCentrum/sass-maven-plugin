@@ -43,6 +43,9 @@ matrix:
     - os: linux
       jdk: oraclejdk8
       env: VERSION=3.5.3
+     - os: linux
+      jdk: oraclejdk8
+      env: VERSION=3.6.0
   #  - os: linux
   #    jdk: oraclejdk8
   #    env: VERSION=3.5.4
