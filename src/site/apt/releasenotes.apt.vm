@@ -29,11 +29,11 @@ ${project.name} ${project.version} Release Notes
   Please check the {{{/${project.artifactId}/dependencies.html#provided}full dependencies}}
   to find out about the specific Sass and other transitive dependencies included in this release.
 
-~~ ** New
-~~
-~~   * ...
-~~
-~~   []
+ ** New
+ 
+  * Require Maven 3.3.9
+
+  []
 
 ** Enhancements and Fixes
 
@@ -49,8 +49,10 @@ ${project.name} ${project.version} Release Notes
 ~~     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
 ~~     Note that Ruby Sass has now been deprecated, read the
 ~~     {{{http://sass.logdown.com/posts/7081811}blogpost:Ruby Sass is Deprecated}}.
-~~
-~~ []
+
+  * Support Maven 3.6.0
+
+  []
 
 
 * 3.6.1 Release Notes
