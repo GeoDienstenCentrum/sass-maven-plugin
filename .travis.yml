@@ -30,9 +30,6 @@ matrix:
     # additional builds
     - os: linux
       jdk: oraclejdk8
-      env: VERSION=3.2.5
-    - os: linux
-      jdk: oraclejdk8
       env: VERSION=3.3.9
     - os: linux
       jdk: oraclejdk8
@@ -46,11 +43,6 @@ matrix:
     - os: linux
       jdk: oraclejdk8
       env: VERSION=3.6.0
-  #  - os: linux
-  #    jdk: oraclejdk8
-  #    env: VERSION=3.5.4
-  #  - os: linux
-  #    jdk: oraclejdk9
     - os: osx
       osx_image: xcode10
       env: JVM=latest
