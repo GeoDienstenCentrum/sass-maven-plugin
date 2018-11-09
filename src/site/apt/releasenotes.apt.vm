@@ -37,18 +37,16 @@ ${project.name} ${project.version} Release Notes
 
 ** Enhancements and Fixes
 
-~~  * Update JRuby to ${project.properties.get("jruby.version")}, this plugin now requires Java 8
-~~
+  * Update JRuby to ${project.properties.get("jruby.version")}
+
 ~~  * Update Bourbon to version ${project.properties.get("bourbon.version")}, please check the
 ~~     {{{https://github.com/thoughtbot/bourbon/blob/master/CHANGELOG.md}Bourbon changelog}}
 ~~
 ~~  * Update SCSS-Lint to version ${project.properties.get("scss-lint.version")}, please check
 ~~     the {{{https://github.com/brigade/scss-lint/blob/master/CHANGELOG.md}SCSS-Lint changelog}}
-~~
-~~  * Update Sass to version ${project.properties.get("sass.version")}, please check
-~~     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
-~~     Note that Ruby Sass has now been deprecated, read the
-~~     {{{http://sass.logdown.com/posts/7081811}blogpost:Ruby Sass is Deprecated}}.
+
+  * Update Sass to version ${project.properties.get("sass.version")}, please check
+     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
 
   * Support Maven 3.6.0
 

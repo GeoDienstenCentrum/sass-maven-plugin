@@ -57,7 +57,7 @@
 		<logo href="http://isitmaintained.com/project/GeoDienstenCentrum/${project.artifactId}/"
 			img="http://isitmaintained.com/badge/resolution/GeoDienstenCentrum/${project.artifactId}.svg"
 			name="Average time to resolve an issue" />
-		<logo href="http://sass-lang.com/"
+		<logo href="http://sass-lang.com/ruby-sass/"
 			width="120px"
 			img="images/sass.png"
 			name="Sass" />
