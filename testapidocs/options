@@ -4,7 +4,7 @@
 'UTF-8'
 -protected
 -sourcepath
-'/home/mprins/workspace/sass-maven-plugin/src/test/java:/home/mprins/workspace/sass-maven-plugin/target/generated-test-sources/test-annotations'
+'/home/mprins/workspace/sass-maven-plugin/src/test/java'
 -author
 -bottom
 'Copyright &#169; 2014&#x2013;2018 <a href="https://github.com/GeoDienstenCentrum">GeoDienstenCentrum</a>. All rights reserved.'
@@ -15,7 +15,7 @@
 -docencoding
 'UTF-8'
 -doctitle
-'Sass Compiler Plugin 3.6.2-SNAPSHOT Test API'
+'Sass Compiler Plugin 3.7.0 Test API'
 -link
 'https://maven.apache.org/ref/3.6.0/maven-core/apidocs'
 -link
@@ -41,4 +41,4 @@
 -use
 -version
 -windowtitle
-'Sass Compiler Plugin 3.6.2-SNAPSHOT Test API'
+'Sass Compiler Plugin 3.7.0 Test API'
