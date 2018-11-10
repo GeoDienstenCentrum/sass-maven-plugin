@@ -22,7 +22,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nl.geodienstencentrum.maven</groupId>
 	<artifactId>sass-maven-plugin</artifactId>
-	<version>3.6.2-SNAPSHOT</version>
+	<version>3.7.0-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
 	<name>Sass Compiler Plugin</name>
 	<description>A Maven Plugin that compiles Sass files.</description>
