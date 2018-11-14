@@ -31,9 +31,9 @@ ${project.name} ${project.version} Release Notes
 
 ** New
  
-  * Require Maven 3.3.9
+~~  * Require Maven 3.3.9
 
-  []
+~~  []
 
 ** Enhancements and Fixes
 
@@ -45,8 +45,30 @@ ${project.name} ${project.version} Release Notes
 
   * Update JRuby to ${project.properties.get("jruby.version")}
 
-  * Update Sass to version ${project.properties.get("sass.version")}, please check
-     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
+~~  * Update Sass to version ${project.properties.get("sass.version")}, please check
+~~     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
+
+  []
+
+
+* 3.7.0 Release Notes
+
+  This release features Bourbon version 5.1.0 and Sass version 3.7.2 running on JRuby 9.2.3.0.
+  A complete list of issues can be found in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A3.7.0+is%3Aclosed}milestone 3.7.0}}.
+
+** New
+ 
+  * Require Maven 3.3.9
+
+  []
+
+** Enhancements and Fixes
+
+  * Update JRuby to 9.2.3.0
+  
+  * Update Sass to version 3.7.2, please check
+    the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
 
   * Support Maven 3.6.0
 
@@ -77,10 +99,10 @@ ${project.name} ${project.version} Release Notes
   * Update SCSS-Lint to version 0.57.1, please check
     the {{{https://github.com/brigade/scss-lint/blob/master/CHANGELOG.md}SCSS-Lint changelog}}
 
-  *  Update Sass to version 3.6.0, please check
-     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
-     Note that Ruby Sass has now been deprecated, read the
-     {{{http://sass.logdown.com/posts/7081811}blogpost:Ruby Sass is Deprecated}}.
+  * Update Sass to version 3.6.0, please check
+    the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
+    Note that Ruby Sass has now been deprecated, read the
+    {{{http://sass.logdown.com/posts/7081811}blogpost:Ruby Sass is Deprecated}}.
 
   * Mark plugin <<<threadSafe>>>, fixes ({{{https://github.com/GeoDienstenCentrum/sass-maven-plugin/issues/209}#209}})
 
