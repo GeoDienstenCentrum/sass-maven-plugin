@@ -132,6 +132,10 @@ public class SCSSLintMojo extends AbstractSassMojo {
 		}
 		final Log log = this.getLog();
 
+		Set<String> sourceDirs = this.getSourceDirs();
+		if (sourceDirs.isEmpty()) {
+			return;
+		}
 		// create directory
 		this.outputFile.getParentFile().mkdirs();
 
@@ -151,7 +155,7 @@ public class SCSSLintMojo extends AbstractSassMojo {
 		argv.add("--format=Checkstyle");
 		argv.add("--no-color");
 		argv.add("-o" + this.outputFile);
-		argv.addAll(this.getSourceDirs());
+		argv.addAll(sourceDirs);
 		context.setAttribute(ScriptEngine.ARGV,
 				argv.toArray(new String[argv.size()]),
 				ScriptContext.GLOBAL_SCOPE);

@@ -22,7 +22,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nl.geodienstencentrum.maven</groupId>
 	<artifactId>sass-maven-plugin</artifactId>
-	<version>3.5.6-SNAPSHOT</version>
+	<version>3.7.1-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
 	<name>Sass Compiler Plugin</name>
 	<description>A Maven Plugin that compiles Sass files.</description>
@@ -134,15 +134,20 @@
 			<id>ossrh</id>
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
+		<site>
+			<id>gh-pages</id>
+			<name>github pages site</name>
+			<url>scm:git:https://github.com/GeoDienstenCentrum/sass-maven-plugin.git</url>
+		</site>
 	</distributionManagement>
 	<properties>
 		<project.build.sourceVersion>1.8</project.build.sourceVersion>
 		<project.build.targetVersion>1.8</project.build.targetVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<sass.version>3.6.0</sass.version>
-		<jruby.version>9.2.0.0</jruby.version>
-		<maven-libs.version>3.5.4</maven-libs.version>
+		<sass.version>3.7.2</sass.version>
+		<jruby.version>9.2.4.0</jruby.version>
+		<maven-libs.version>3.6.0</maven-libs.version>
 		<scss-lint.version>0.57.1</scss-lint.version>
 		<bourbon.version>5.1.0</bourbon.version>
 		<maven.version />
@@ -151,6 +156,17 @@
 		<github.password />
 		<github.site.dryRun>false</github.site.dryRun>
 		<skipUnitTests>false</skipUnitTests>
+		<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
+		<versions-maven-plugin.version>2.7</versions-maven-plugin.version>
+		<maven-plugin-plugin.version>3.6.0</maven-plugin-plugin.version>
+		<maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
+		<maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
+		<maven-changes-plugin.version>2.12.1</maven-changes-plugin.version>
+		<dependency-check-maven.version>4.0.0</dependency-check-maven.version>
+		<taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
+		<maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
+		<maven-pmd-plugin.version>3.11.0</maven-pmd-plugin.version>
+		<findbugs-maven-plugin.version>3.0.5</findbugs-maven-plugin.version>
 	</properties>
 	<dependencyManagement />
 	<dependencies>
@@ -162,7 +178,7 @@
 		<dependency>
 			<groupId>org.apache.maven.plugin-tools</groupId>
 			<artifactId>maven-plugin-annotations</artifactId>
-			<version>3.5.2</version>
+			<version>${maven-libs.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -327,12 +343,10 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>3.1.0</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
 					<version>3.1.0</version>
 				</plugin>
@@ -342,77 +356,66 @@
 					<version>2.5.2</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>3.0.1</version>
+					<version>${maven-javadoc-plugin.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.owasp</groupId>
 					<artifactId>dependency-check-maven</artifactId>
-					<version>3.3.2</version>
+					<version>${dependency-check-maven.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>versions-maven-plugin</artifactId>
-					<version>2.7</version>
+					<version>${versions-maven-plugin.version}</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-project-info-reports-plugin</artifactId>
-					<version>3.0.0</version>
+					<version>${maven-project-info-reports-plugin.version}</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-plugin-plugin</artifactId>
-					<version>3.5.2</version>
+					<version>${maven-plugin-plugin.version}</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jxr-plugin</artifactId>
-					<version>3.0.0</version>
+					<version>${maven-jxr-plugin.version}</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-changes-plugin</artifactId>
-					<version>2.12.1</version>
+					<version>${maven-changes-plugin.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>taglist-maven-plugin</artifactId>
-					<version>2.4</version>
+					<version>${taglist-maven-plugin.version}</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>3.0.0</version>
+					<version>${maven-checkstyle-plugin.version}</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-pmd-plugin</artifactId>
-					<version>3.10.0</version>
+					<version>${maven-pmd-plugin.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>findbugs-maven-plugin</artifactId>
-					<version>3.0.5</version>
+					<version>${findbugs-maven-plugin.version}</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-failsafe-plugin</artifactId>
-					<version>2.22.0</version>
+					<version>2.22.1</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.22.0</version>
+					<version>2.22.1</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.8.0</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-doap-plugin</artifactId>
 					<version>1.2</version>
 				</plugin>
@@ -422,27 +425,22 @@
 					<version>3.1.0</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-gpg-plugin</artifactId>
 					<version>1.6</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
 					<version>3.0.1</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
 					<version>3.7.1</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
 					<version>2.5.3</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<version>2.8.2</version>
 				</plugin>
@@ -457,9 +455,8 @@
 					<version>1.1.5</version>
 				</plugin>
 				<plugin>
-					<groupId>com.github.github</groupId>
-					<artifactId>site-maven-plugin</artifactId>
-					<version>0.12</version>
+					<artifactId>maven-scm-publish-plugin</artifactId>
+					<version>3.0.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.jacoco</groupId>
@@ -647,25 +644,25 @@
 					<generateSitemap>true</generateSitemap>
 					<attach>true</attach>
 					<locales>en</locales>
-					<outputEncoding>UTF-8</outputEncoding>
+					<outputEncoding>${project.build.sourceEncoding}</outputEncoding>
 					<skipDeploy>true</skipDeploy>
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>site-maven-plugin</artifactId>
+				<artifactId>maven-scm-publish-plugin</artifactId>
 				<configuration>
-					<message>Site update for version ${project.version} (rev. ${git.revision})</message>
-					<server>github</server>
-					<force>false</force>
-					<noJekyll>true</noJekyll>
+					<content>${project.reporting.outputDirectory}</content>
+					<scmBranch>gh-pages</scmBranch>
+					<serverId>github</serverId>
 				</configuration>
 				<executions>
 					<execution>
-						<goals>
-							<goal>site</goal>
-						</goals>
+						<id>scm-publish</id>
 						<phase>site-deploy</phase>
+						<!-- deploy site with maven-scm-publish-plugin -->
+						<goals>
+							<goal>publish-scm</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
@@ -709,6 +706,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>
+				<version>${versions-maven-plugin.version}</version>
 				<reportSets>
 					<reportSet>
 						<reports>
@@ -720,13 +718,15 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-plugin-plugin</artifactId>
+				<version>${maven-plugin-plugin.version}</version>
 			</plugin>
 			<plugin>
 				<artifactId>maven-jxr-plugin</artifactId>
+				<version>${maven-jxr-plugin.version}</version>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>${maven-project-info-reports-plugin.version}</version>
 				<reportSets>
 					<reportSet>
 						<reports>
@@ -748,11 +748,12 @@
 					</reportSet>
 				</reportSets>
 				<configuration>
-					<dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+					<dependencyDetailsEnabled>true</dependencyDetailsEnabled>
 				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-changes-plugin</artifactId>
+				<version>${maven-changes-plugin.version}</version>
 				<configuration>
 					<publishDateLocale>en</publishDateLocale>
 					<includeOpenIssues>false</includeOpenIssues>
@@ -770,12 +771,14 @@
 			<plugin>
 				<groupId>org.owasp</groupId>
 				<artifactId>dependency-check-maven</artifactId>
+				<version>${dependency-check-maven.version}</version>
 				<configuration>
 					<name>OWASP Dependency Check</name>
 				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven-javadoc-plugin.version}</version>
 				<reportSets>
 					<reportSet>
 						<reports>
@@ -808,6 +811,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>taglist-maven-plugin</artifactId>
+				<version>${taglist-maven-plugin.version}</version>
 			</plugin>
 			<!-- plugin>
 				<artifactId>maven-linkcheck-plugin</artifactId>
@@ -817,6 +821,7 @@
 			</plugin -->
 			<plugin>
 				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${maven-checkstyle-plugin.version}</version>
 				<configuration>
 					<configLocation>${basedir}/checkstyle-ruleset.xml</configLocation>
 					<suppressionsLocation>${basedir}/checkstyle-suppressions.xml</suppressionsLocation>
@@ -833,6 +838,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-pmd-plugin</artifactId>
+				<version>${maven-pmd-plugin.version}</version>
 				<configuration>
 					<rulesets>
 						<ruleset>${basedir}/pmd-ruleset.xml</ruleset>
@@ -850,6 +856,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>${findbugs-maven-plugin.version}</version>
 				<configuration>
 					<effort>Default</effort>
 					<threshold>Default</threshold>

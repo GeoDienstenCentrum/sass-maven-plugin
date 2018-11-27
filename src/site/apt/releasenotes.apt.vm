@@ -29,72 +29,127 @@ ${project.name} ${project.version} Release Notes
   Please check the {{{/${project.artifactId}/dependencies.html#provided}full dependencies}}
   to find out about the specific Sass and other transitive dependencies included in this release.
 
-~~ ** New
-~~ 
-~~   * ...
-~~   
-~~   [] 
+** New
  
+~~  * Require Maven 3.3.9
+
+~~  []
+
 ** Enhancements and Fixes
- 
-~~   * Update JRuby to ${project.properties.get("jruby.version")}, this plugin now requires Java 8
-~~ 
+
 ~~  * Update Bourbon to version ${project.properties.get("bourbon.version")}, please check the
 ~~     {{{https://github.com/thoughtbot/bourbon/blob/master/CHANGELOG.md}Bourbon changelog}}
+~~
+~~  * Update SCSS-Lint to version ${project.properties.get("scss-lint.version")}, please check
+~~     the {{{https://github.com/brigade/scss-lint/blob/master/CHANGELOG.md}SCSS-Lint changelog}}
 
-  * Update SCSS-Lint to version ${project.properties.get("scss-lint.version"}, please check
-     the {{{https://github.com/brigade/scss-lint/blob/master/CHANGELOG.md}SCSS-Lint changelog}}
+  * Update JRuby to ${project.properties.get("jruby.version")}
 
-  * Update Sass to version ${project.properties.get("sass.version")}, please check
-     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
-     Note that Ruby Sass has now been deprecated, read the
-     {{{http://sass.logdown.com/posts/7081811}blogpost:Ruby Sass is Deprecated}}.
+~~  * Update Sass to version ${project.properties.get("sass.version")}, please check
+~~     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
 
-  * Mark plugin <<<threadSafe>>>, fixes ({{{https://github.com/GeoDienstenCentrum/sass-maven-plugin/issues/209}#209}})
+  []
+
+
+* 3.7.0 Release Notes
+
+  This release features Bourbon version 5.1.0 and Sass version 3.7.2 running on JRuby 9.2.3.0.
+  A complete list of issues can be found in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A3.7.0+is%3Aclosed}milestone 3.7.0}}.
+
+** New
+ 
+  * Require Maven 3.3.9
 
   * Require Maven 3.5.0, the previous release (3.3.9) was release almost 3 years ago and 
     things have changed, time to upgrade if you haven't.
 
   []
+
+** Enhancements and Fixes
+
+  * Update JRuby to 9.2.3.0
   
+  * Update Sass to version 3.7.2, please check
+    the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
+
+  * Support Maven 3.6.0
+
+  []
+
+
+* 3.6.1 Release Notes
+
+  This release features Bourbon version 5.1.0 and Sass version 3.6.0 running on JRuby 9.2.0.0.
+  A complete list of issues can be found in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A3.6.1+is%3Aclosed}milestone 3.6.1}}.
+
+** Enhancements and Fixes
+
+  * Do not execute lint on empty source list ({{{https://github.com/GeoDienstenCentrum/sass-maven-plugin/issues/222}#222}})
+
+  []
+
+
+* 3.6.0 Release Notes
+
+  This release features Bourbon version 5.1.0 and Sass version 3.6.0 running on JRuby 9.2.0.0.
+  A complete list of issues can be found in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A3.6.0+is%3Aclosed}milestone 3.6.0}}.
+
+** Enhancements and Fixes
+
+  * Update SCSS-Lint to version 0.57.1, please check
+    the {{{https://github.com/brigade/scss-lint/blob/master/CHANGELOG.md}SCSS-Lint changelog}}
+
+  * Update Sass to version 3.6.0, please check
+    the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
+    Note that Ruby Sass has now been deprecated, read the
+    {{{http://sass.logdown.com/posts/7081811}blogpost:Ruby Sass is Deprecated}}.
+
+  * Mark plugin <<<threadSafe>>>, fixes ({{{https://github.com/GeoDienstenCentrum/sass-maven-plugin/issues/209}#209}})
+
+  []
+
+
 * 3.5.5 Release Notes
 
   This release features Bourbon version 5.1.0 and Sass version 3.5.7 running on JRuby 9.2.0.0.
   A complete list of issues can be found in the tracker
-  {{{${project.issueManagement.url}?q=milestone%3A$3.5.5+is%3Aclosed}milestone 3.5.5}}.
+  {{{${project.issueManagement.url}?q=milestone%3A3.5.5+is%3Aclosed}milestone 3.5.5}}.
 
 ** Enhancements and Fixes
 
   * Update Bourbon to version 5.1.0, please check the
      {{{https://github.com/thoughtbot/bourbon/blob/master/CHANGELOG.md}Bourbon changelog}}
-     
+
   * Update Sass to version 3.5.7, please check
      the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
      Note that Ruby Sass has now been deprecated, read the
      {{{http://sass.logdown.com/posts/7081811}blogpost:Ruby Sass is Deprecated}}.
-     
+
   * Update Maven dependencies to version 4.5.4
-  
+
   []
-  
-  
+
+
 * 3.5.4 Release Notes
 
   This release features Bourbon version 5.0.0 and Sass version 3.5.6 running on JRuby 9.2.0.0.
   A complete list of issues can be found in the tracker
-  {{{${project.issueManagement.url}?q=milestone%3A$3.5.4+is%3Aclosed}milestone 3.5.4}}.
+  {{{${project.issueManagement.url}?q=milestone%3A3.5.4+is%3Aclosed}milestone 3.5.4}}.
 
 ** Enhancements and Fixes
- 
+
    * Update JRuby to 9.2.0.0, this plugin now requires Java 8
-   
+
    []
 
 * 3.5.3 Release Notes
 
   This release features Bourbon version 5.0.0 and Sass version 3.5.6 running on JRuby 9.1.16.0.
   A complete list of issues can be found in the tracker
-  {{{${project.issueManagement.url}?q=milestone%3A$3.5.3+is%3Aclosed}milestone 3.5.3}}.
+  {{{${project.issueManagement.url}?q=milestone%3A3.5.3+is%3Aclosed}milestone 3.5.3}}.
 
 ** Enhancements and Fixes
 
@@ -107,20 +162,20 @@ ${project.name} ${project.version} Release Notes
 
 * 3.5.2 Release Notes
 
-  This release features Bourbon version 5.0.0 and Sass version 3.5.5 running on JRuby 9.1.16.0. 
+  This release features Bourbon version 5.0.0 and Sass version 3.5.5 running on JRuby 9.1.16.0.
   A complete list of issues can be found in the tracker
-  {{{${project.issueManagement.url}?q=milestone%3A$3.5.2+is%3Aclosed}milestone 3.5.2}}.
-  
+  {{{${project.issueManagement.url}?q=milestone%3A3.5.2+is%3Aclosed}milestone 3.5.2}}.
+
 ** Enhancements and Fixes
 
   * Update JRuby to 9.1.16.0
 
   * Update Bourbon to version 5.0.0, please check the
     {{{https://github.com/thoughtbot/bourbon/blob/master/CHANGELOG.md}Bourbon changelog}}
-  
+
   * Update SCSS-Lint to version 0.57.0, please check
     the {{{https://github.com/brigade/scss-lint/blob/master/CHANGELOG.md}SCSS-Lint changelog}}
-  
+
   * Update Sass to version 3.5.5, please check
     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
 
@@ -128,15 +183,15 @@ ${project.name} ${project.version} Release Notes
   * Use <<<sass-listen>>> instead of <<<listen>>> gem, fixes ({{{https://github.com/GeoDienstenCentrum/sass-maven-plugin/issues/170}#170}})
 
   []
-  
-  
+
+
 * 3.5.1 Release Notes
 
   This release features Bourbon version 4.3.4 and Sass version 3.5.4 running on JRuby 9.1.15.0.
 
   A complete list of issues can be found in the tracker
-  {{{${project.issueManagement.url}?q=milestone%3A$3.5.1+is%3Aclosed}milestone 3.5.1}}.
-  
+  {{{${project.issueManagement.url}?q=milestone%3A3.5.1+is%3Aclosed}milestone 3.5.1}}.
+
 ** Enhancements and Fixes
 
   * Update Sass to version 3.5.4, please check
@@ -152,8 +207,8 @@ ${project.name} ${project.version} Release Notes
   This release features Bourbon version 4.3.4 and Sass version 3.5.3 running on JRuby 9.1.13.0.
 
   A complete list of issues can be seen in the tracker
-  {{{${project.issueManagement.url}?q=milestone%3A$3.5.0+is%3Aclosed}milestone 3.5.0}} and
-  {{{${project.issueManagement.url}?q=milestone%3A$3.5-RC1+is%3Aclosed}milestone 3.5-RC1}}.
+  {{{${project.issueManagement.url}?q=milestone%3A3.5.0+is%3Aclosed}milestone 3.5.0}} and
+  {{{${project.issueManagement.url}?q=milestone%3A3.5-RC1+is%3Aclosed}milestone 3.5-RC1}}.
 
 ** New
 
@@ -182,7 +237,7 @@ ${project.name} ${project.version} Release Notes
   This release features Bourbon version 4.3.4 and Sass version 3.5.3 running on JRuby 9.1.13.0.
 
   A complete list of issues can be seen in the tracker
-  {{{${project.issueManagement.url}?q=milestone%3A$3.5-RC1+is%3Aclosed}milestone 3.5-RC1}}.
+  {{{${project.issueManagement.url}?q=milestone%3A3.5-RC1+is%3Aclosed}milestone 3.5-RC1}}.
 
   <<NOTE>> SCSS linting is currently broken, we are waiting for a <<<scss_lint>>> release that supports Sass 3.5.x,
   see {{{https://github.com/brigade/scss-lint/issues/877}scss-lint #877}}

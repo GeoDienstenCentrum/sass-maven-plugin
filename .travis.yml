@@ -7,10 +7,49 @@ env:
     - BASEURL=https://archive.apache.org/dist/maven/maven-3/VERSION/binaries/apache-maven-VERSION-bin.zip
     - FILE=apache-maven-VERSION-bin.zip
     - DIR=apache-maven-VERSION
-    - VERSION=3.5.3
+    - VERSION=3.5.4
     - secure: "NJ1w0QJMpWHDz37+f6V1vZ2on7dDVxIup7jtjlvxI192l/ETjEHop2DHJp7HEjZ6ZcC9ZJAClSW0ew7az4GaaHxvFMb2xkxH7weOPE+REZM7xHGjkYI1ElKj87d68idUT6N0kzYmN5k1wOhCvMiIUPSUMia83TfTl4USAGOVKPs="
     - secure: "kwD93y0KiVmGHvefffVn7Hd7T1ZeZh+4E41LqXBAYxYGFCSYXrPlNygO6dxjKgfSSSPXqXu9SgNXdEwZez/qoIA+TAm3VOsKVcKaIJ/0En2hmUp/yLmQa3Rc9rkDdCodDkYumD6650I0l2s17w5YATVTeoUfgyAbGZLRLlmKrmY="
     - secure: "hNjTA8dataGmylZo0QY4uhx8BNKQfJzfwdMMO7EdbfpEyqj9K7lIDIpcU/vCDgzUF+nISY0iaxr0ErguFYIat5VWM/4tKwQjfK+2MFNjzLlBsAVWirIsLoASzSIUroWKVUwSg61qTmuEf5A+aKhxNrvWALXaHgCoPU8DOpE2P6s="
+
+os:
+  - linux
+  #- osx
+
+jdk:
+  - oraclejdk8
+  - oraclejdk9
+  - oraclejdk11
+  - oraclejdk-ea
+  - openjdk8
+  - openjdk10
+
+matrix:
+  fast_finish: true
+  include:
+    # additional builds
+    - os: linux
+      jdk: oraclejdk8
+      env: VERSION=3.5.0
+    - os: linux
+      jdk: oraclejdk8
+      env: VERSION=3.5.2
+    - os: linux
+      jdk: oraclejdk8
+      env: VERSION=3.5.3
+    - os: linux
+      jdk: oraclejdk8
+      env: VERSION=3.6.0
+    - os: osx
+      osx_image: xcode10
+      env: JVM=latest
+    - os: osx
+      osx_image: xcode9.3
+    - os: osx
+      osx_image: xcode9.4
+  allow_failures:
+    - jdk: oraclejdk11
+    - jdk: oraclejdk-ea
 
 before_install:
    - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
@@ -38,6 +77,7 @@ before_install:
    - echo $VERSION
    - echo $M2_HOME
    - java -XshowSettings:vm -version
+   - unset _JAVA_OPTIONS
 
 install:
   # install without any testing to get dependencies in place
@@ -47,68 +87,36 @@ script:
   - unset GEM_PATH
   # execute unit and integration tests
   - mvn -e -fae -B -DWatchMojoTestSleeptime=90000 -Dfailsafe.useFile=false clean test verify -Dtest="*,!WatchMojoTest" -Dorg.slf4j.simpleLogger.showDateTime=true
-  - if [ "$TRAVIS_JDK_VERSION" == oraclejdk8 ] && [ "$VERSION" == "3.5.3" ]; then
+  - if [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] && [ "$VERSION" == "3.5.4" ]; then
          mvn javadoc:javadoc;
+    fi
+  - if [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] && [ "$VERSION" == "3.5.4" ]; then
          mvn javadoc:test-javadoc;
     fi
 
 after_success:
+  - echo Conditions: TRAVIS_OS_NAME=$TRAVIS_OS_NAME VERSION=$VERSION TRAVIS_JDK_VERSION=$TRAVIS_JDK_VERSION TRAVIS_BRANCH=$TRAVIS_BRANCH TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST
   # generate code coverage report, just for oraclejdk8 and latest maven
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.3" ] &&
-       [ "$TRAVIS_JDK_VERSION" == oraclejdk8 ]; then
-         mvn -B -e -fae -Ptravis-ci clean verify jacoco:report coveralls:report;
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.4" ] &&
+       [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ]; then
+         mvn -B -DWatchMojoTestSleeptime=90000  -Dtest="*,!WatchMojoTest" -e -fae -Ptravis-ci verify jacoco:report jacoco:report-integration coveralls:report;
     fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.3" ] &&
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.4" ] &&
        [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] &&
        [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
          echo "Attempt to deploy snapshot artifact";
-         travis_wait mvn deploy --settings .travis/settings.xml -DskipTests=true -B;
+         travis_wait 20 mvn deploy --settings .travis/settings.xml -DskipTests=true -B -Dmaven.test.skip=true;
     else
-        echo "Not deploying snapshot artifact";
+        echo -n "Not deploying snapshot artifact. ";
     fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.3" ] &&
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.4" ] &&
        [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] &&
        [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
           echo "Attempt to deploy maven site";
-          travis_wait mvn -e -fae -B site-deploy --settings .travis/settings.xml;
+          travis_wait 30 mvn -e -fae -B site-deploy --settings .travis/settings.xml;
     else
-          echo -n "not deploying maven site";
+          echo -n "Not deploying maven site. ";
     fi
-
-os:
-  - linux
-  - osx
-
-matrix:
-  fast_finish: false
-  include:
-    # additional builds
-    - os: linux
-      jdk: openjdk8
-    - os: linux
-      jdk: oraclejdk8
-      env: VERSION=3.5.0
- # skip this as it is the current travis-ci linux setup
- #   - os: linux
- #     jdk: oraclejdk8
- #     env: VERSION=3.5.2
-    - os: linux
-      jdk: oraclejdk8
-      env: VERSION=3.5.3
-    - os: linux
-      jdk: oraclejdk8
-      env: VERSION=3.5.4
-    - os: linux
-      jdk: oraclejdk9
-    - os: osx
-      env: JVM=latest
-# skip this as it is the current travis-ci osx setup
-#    - os: osx
-#      env: JAVA_HOME=/usr/libexec/java_home
-  allow_failures:
-#   - env: JVM=latest
-#   - jdk: oraclejdk9
-
 
 cache:
   brew: true
