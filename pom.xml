@@ -294,7 +294,7 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
-		<repository>
+		<!-- repository>
 			<id>jruby-snapshots</id>
 			<url>http://ci.jruby.org/snapshots/maven/</url>
 			<releases>
@@ -303,7 +303,7 @@
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
-		</repository>
+		</repository -->
 	</repositories>
 	<pluginRepositories />
 	<build>
