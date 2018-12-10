@@ -17,12 +17,10 @@ os:
   #- osx
 
 jdk:
-  - oraclejdk8
-  - oraclejdk9
   - oraclejdk11
-  - oraclejdk-ea
+  - oraclejdk8
+  - openjdk11
   - openjdk8
-  - openjdk10
 
 matrix:
   fast_finish: true
@@ -44,30 +42,32 @@ matrix:
       jdk: oraclejdk8
       env: VERSION=3.6.0
     - os: osx
-      osx_image: xcode10
-      env: JVM=latest
+      osx_image: xcode10.1
+      #env: JVM=latest
     - os: osx
-      osx_image: xcode9.3
+      osx_image: xcode10
+      #env: JVM=latest
     - os: osx
       osx_image: xcode9.4
+    - os: osx
+      osx_image: xcode9.3
   allow_failures:
-    - jdk: oraclejdk11
-    - jdk: oraclejdk-ea
+    #- jdk: oraclejdk11
 
 before_install:
    - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
-         wget --no-check-certificate $(echo -n $BASEURL | sed -e 's#VERSION#'$VERSION'#g');
-         unzip -qq $(echo -n $FILE | sed -e 's#VERSION#'$VERSION'#');
+         wget --no-check-certificate $(echo -n $BASEURL | sed -e 's#VERSION#'$VERSION'#g') -P $HOME/downloads/;
+         unzip -qq $(echo -n $HOME/downloads/$FILE | sed -e 's#VERSION#'$VERSION'#');
          export M2_HOME=$PWD/$(echo -n $DIR | sed -e 's#VERSION#'$VERSION'#');
          export PATH=$M2_HOME/bin:$PATH;
      fi
    - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
          brew update --quiet;
      fi
-   - if [ "$TRAVIS_OS_NAME" == "osx" ] && [ "$JVM" == "latest" ]; then
-         brew tap caskroom/cask;
-         brew install Caskroom/cask/java;
-     fi
+   #- if [ "$TRAVIS_OS_NAME" == "osx" ] && [ "$JVM" == "latest" ]; then
+   #      brew tap caskroom/cask;
+   #      brew install Caskroom/cask/java;
+   #  fi
    #- if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$JVM" == "latest" ]; then
    #      sudo apt-get update -qq;
    #      sudo /bin/echo -e oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections;
