@@ -2,7 +2,7 @@
 <pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
-    version="6.8.0" timestamp="2019-01-09T11:25:22.744">
+    version="6.8.0" timestamp="2019-01-09T18:36:01.312">
 <file name="/home/mprins/workspace/sass-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/sass/AbstractSassMojo.java">
 <violation beginline="60" endline="497" begincolumn="17" endcolumn="1" rule="ModifiedCyclomaticComplexity" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.sass" class="AbstractSassMojo" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_design.html#modifiedcyclomaticcomplexity" priority="3">
 The class 'AbstractSassMojo' has a Modified Cyclomatic Complexity of 5 (Highest = 13).
