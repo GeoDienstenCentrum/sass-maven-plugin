@@ -7,7 +7,7 @@ env:
     - BASEURL=https://archive.apache.org/dist/maven/maven-3/VERSION/binaries/apache-maven-VERSION-bin.zip
     - FILE=apache-maven-VERSION-bin.zip
     - DIR=apache-maven-VERSION
-    - VERSION=3.5.4
+    - VERSION=3.6.0
     - secure: "NJ1w0QJMpWHDz37+f6V1vZ2on7dDVxIup7jtjlvxI192l/ETjEHop2DHJp7HEjZ6ZcC9ZJAClSW0ew7az4GaaHxvFMb2xkxH7weOPE+REZM7xHGjkYI1ElKj87d68idUT6N0kzYmN5k1wOhCvMiIUPSUMia83TfTl4USAGOVKPs="
     - secure: "kwD93y0KiVmGHvefffVn7Hd7T1ZeZh+4E41LqXBAYxYGFCSYXrPlNygO6dxjKgfSSSPXqXu9SgNXdEwZez/qoIA+TAm3VOsKVcKaIJ/0En2hmUp/yLmQa3Rc9rkDdCodDkYumD6650I0l2s17w5YATVTeoUfgyAbGZLRLlmKrmY="
     - secure: "hNjTA8dataGmylZo0QY4uhx8BNKQfJzfwdMMO7EdbfpEyqj9K7lIDIpcU/vCDgzUF+nISY0iaxr0ErguFYIat5VWM/4tKwQjfK+2MFNjzLlBsAVWirIsLoASzSIUroWKVUwSg61qTmuEf5A+aKhxNrvWALXaHgCoPU8DOpE2P6s="
@@ -17,30 +17,30 @@ os:
   #- osx
 
 jdk:
-  - oraclejdk11
-  - oraclejdk8
   - openjdk11
   - openjdk8
+  - oraclejdk11
+  - oraclejdk8
 
 matrix:
   fast_finish: true
   include:
     # additional builds
     - os: linux
-      jdk: oraclejdk8
+      jdk: openjdk8
       env: VERSION=3.3.9
     - os: linux
-      jdk: oraclejdk8
+      jdk: openjdk8
       env: VERSION=3.5.0
     - os: linux
-      jdk: oraclejdk8
+      jdk: openjdk8
       env: VERSION=3.5.2
     - os: linux
-      jdk: oraclejdk8
+      jdk: openjdk8
       env: VERSION=3.5.3
     - os: linux
-      jdk: oraclejdk8
-      env: VERSION=3.6.0
+      jdk: openjdk8
+      env: VERSION=3.5.4
     - os: osx
       osx_image: xcode10.1
       #env: JVM=latest
@@ -68,12 +68,6 @@ before_install:
    #      brew tap caskroom/cask;
    #      brew install Caskroom/cask/java;
    #  fi
-   #- if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$JVM" == "latest" ]; then
-   #      sudo apt-get update -qq;
-   #      sudo /bin/echo -e oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections;
-   #      sudo apt-get -o Dpkg::Options::="--force-confnew" install -y oracle-java9-installer oracle-java9-set-default oracle-java9-unlimited-jce-policy;
-   #      sudo update-java-alternatives -s java-9-oracle;
-   #  fi
    - echo $TRAVIS_OS_NAME
    - echo $JAVA_HOME
    - echo $TRAVIS_JDK_VERSION
@@ -90,30 +84,30 @@ script:
   - unset GEM_PATH
   # execute unit and integration tests
   - mvn -e -fae -B -DWatchMojoTestSleeptime=90000 -Dfailsafe.useFile=false clean test verify -Dtest="*,!WatchMojoTest" -Dorg.slf4j.simpleLogger.showDateTime=true
-  - if [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] && [ "$VERSION" == "3.5.4" ]; then
+  - if [ "$TRAVIS_JDK_VERSION" == "openjdk8" ] && [ "$VERSION" == "3.6.0" ]; then
          mvn javadoc:javadoc;
     fi
-  - if [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] && [ "$VERSION" == "3.5.4" ]; then
+  - if [ "$TRAVIS_JDK_VERSION" == "openjdk8" ] && [ "$VERSION" == "3.6.0" ]; then
          mvn javadoc:test-javadoc;
     fi
 
 after_success:
   - echo Conditions: TRAVIS_OS_NAME=$TRAVIS_OS_NAME VERSION=$VERSION TRAVIS_JDK_VERSION=$TRAVIS_JDK_VERSION TRAVIS_BRANCH=$TRAVIS_BRANCH TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST
-  # generate code coverage report, just for oraclejdk8 and latest maven
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.4" ] &&
-       [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ]; then
+  # generate code coverage report, just for openjdk8 and latest maven
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.6.0" ] &&
+       [ "$TRAVIS_JDK_VERSION" == "openjdk8" ]; then
          mvn -B -DWatchMojoTestSleeptime=90000  -Dtest="*,!WatchMojoTest" -e -fae -Ptravis-ci verify jacoco:report jacoco:report-integration coveralls:report;
     fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.4" ] &&
-       [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] &&
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.6.0" ] &&
+       [ "$TRAVIS_JDK_VERSION" == "openjdk8" ] &&
        [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
          echo "Attempt to deploy snapshot artifact";
-         travis_wait 20 mvn deploy --settings .travis/settings.xml -DskipTests=true -B -Dmaven.test.skip=true;
+         travis_wait 10 mvn deploy --settings .travis/settings.xml -DskipTests=true -B -Dmaven.test.skip=true;
     else
         echo -n "Not deploying snapshot artifact. ";
     fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.4" ] &&
-       [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] &&
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.6.0" ] &&
+       [ "$TRAVIS_JDK_VERSION" == "openjdk11" ] &&
        [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
           echo "Attempt to deploy maven site";
           travis_wait 30 mvn -e -fae -B site-deploy --settings .travis/settings.xml;
