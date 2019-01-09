@@ -45,8 +45,8 @@ ${project.name} ${project.version} Release Notes
 
   * Update JRuby to ${project.properties.get("jruby.version")}
 
-~~  * Update Sass to version ${project.properties.get("sass.version")}, please check
-~~     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
+  * Update Sass to version ${project.properties.get("sass.version")}, please check
+     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
 
   []
 
