@@ -43,13 +43,27 @@ ${project.name} ${project.version} Release Notes
 ~~  * Update SCSS-Lint to version ${project.properties.get("scss-lint.version")}, please check
 ~~     the {{{https://github.com/brigade/scss-lint/blob/master/CHANGELOG.md}SCSS-Lint changelog}}
 
-  * Update JRuby to ${project.properties.get("jruby.version")}
-
+~~  * Update JRuby to ${project.properties.get("jruby.version")}
+~~
 ~~  * Update Sass to version ${project.properties.get("sass.version")}, please check
 ~~     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
+~~
+~~  []
+
+* 3.7.1 Release Notes
+
+  This release features Bourbon version 5.1.0 and Sass version 3.7.3 running on JRuby 9.2.5.0. 
+  A complete list of issues can be found in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A3.7.1+is%3Aclosed}milestone 3.7.1}}.
+
+** Enhancements and Fixes
+
+  * Update JRuby to ${project.properties.get("jruby.version")}
+
+  * Update Sass to version ${project.properties.get("sass.version")}, please check
+     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
 
   []
-
 
 * 3.7.0 Release Notes
 

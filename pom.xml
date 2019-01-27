@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-	Copyright 2014-2018 Mark Prins, GeoDienstenCentrum.
+	Copyright 2014-2019 Mark Prins, GeoDienstenCentrum.
 	Copyright 2010-2014 Jasig.
 
 	See the NOTICE file distributed with this work for additional information
@@ -18,11 +18,11 @@
 	See the License for the specific language governing permissions and
 	limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:merge="http://maven.apache.org/plugin-merge" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nl.geodienstencentrum.maven</groupId>
 	<artifactId>sass-maven-plugin</artifactId>
-	<version>3.7.1-SNAPSHOT</version>
+	<version>3.7.2-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
 	<name>Sass Compiler Plugin</name>
 	<description>A Maven Plugin that compiles Sass files.</description>
@@ -145,13 +145,12 @@
 		<project.build.targetVersion>1.8</project.build.targetVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<sass.version>3.7.2</sass.version>
-		<jruby.version>9.2.4.0</jruby.version>
+		<sass.version>3.7.3</sass.version>
+		<jruby.version>9.2.5.0</jruby.version>
 		<maven-libs.version>3.6.0</maven-libs.version>
 		<scss-lint.version>0.57.1</scss-lint.version>
 		<bourbon.version>5.1.0</bourbon.version>
 		<maven.version />
-		<debug>true</debug>
 		<github.username />
 		<github.password />
 		<github.site.dryRun>false</github.site.dryRun>
@@ -162,11 +161,12 @@
 		<maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
 		<maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
 		<maven-changes-plugin.version>2.12.1</maven-changes-plugin.version>
-		<dependency-check-maven.version>4.0.0</dependency-check-maven.version>
+		<dependency-check-maven.version>4.0.2</dependency-check-maven.version>
 		<taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
 		<maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
 		<maven-pmd-plugin.version>3.11.0</maven-pmd-plugin.version>
 		<findbugs-maven-plugin.version>3.0.5</findbugs-maven-plugin.version>
+		<maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
 	</properties>
 	<dependencyManagement />
 	<dependencies>
@@ -294,7 +294,7 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
-		<repository>
+		<!-- repository>
 			<id>jruby-snapshots</id>
 			<url>http://ci.jruby.org/snapshots/maven/</url>
 			<releases>
@@ -303,7 +303,7 @@
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
-		</repository>
+		</repository -->
 	</repositories>
 	<pluginRepositories />
 	<build>
@@ -351,9 +351,8 @@
 					<version>3.1.0</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-install-plugin</artifactId>
-					<version>2.5.2</version>
+					<version>3.0.0-M1</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-javadoc-plugin</artifactId>
@@ -405,11 +404,11 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-failsafe-plugin</artifactId>
-					<version>2.22.1</version>
+					<version>${maven-surefire-plugin.version}</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.22.1</version>
+					<version>${maven-surefire-plugin.version}</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -420,9 +419,8 @@
 					<version>1.2</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.1.0</version>
+					<version>3.1.1</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-gpg-plugin</artifactId>
@@ -442,7 +440,7 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-deploy-plugin</artifactId>
-					<version>2.8.2</version>
+					<version>3.0.0-M1</version>
 				</plugin>
 				<plugin>
 					<groupId>ru.concerteza.buildnumber</groupId>
@@ -452,7 +450,7 @@
 				<plugin>
 					<groupId>de.saumya.mojo</groupId>
 					<artifactId>gem-maven-plugin</artifactId>
-					<version>1.1.5</version>
+					<version>1.1.6</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-scm-publish-plugin</artifactId>
@@ -543,12 +541,8 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<debug>${debug}</debug>
-					<optimize>!${debug}</optimize>
 					<source>${project.build.sourceVersion}</source>
 					<target>${project.build.targetVersion}</target>
-					<showDeprecation>${debug}</showDeprecation>
-					<showWarnings>${debug}</showWarnings>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -620,10 +614,8 @@
 						<manifestEntries>
 							<Specification-Title>${project.name}</Specification-Title>
 							<Specification-Version>${project.version}</Specification-Version>
-							<Specification-Vendor>${project.specification_vendor}</Specification-Vendor>
 							<Implementation-Title>${project.groupId}.${project.artifactId}</Implementation-Title>
 							<Implementation-Version>${git.revision}</Implementation-Version>
-							<Implementation-Vendor>${project.implementation_vendor}</Implementation-Vendor>
 							<X-Git-Branch>${git.branch}</X-Git-Branch>
 							<X-Git-Tag>${git.tag}</X-Git-Tag>
 							<X-Git-Commits-Count>${git.commitsCount}</X-Git-Commits-Count>
@@ -672,7 +664,7 @@
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<useReleaseProfile>false</useReleaseProfile>
 					<releaseProfiles>release</releaseProfiles>
-					<preparationGoals>clean install -Dmaven.test.skip=true</preparationGoals>
+					<preparationGoals>clean verify -Dmaven.test.skip=true</preparationGoals>
 					<goals>deploy</goals>
 					<pushChanges>true</pushChanges>
 				</configuration>
@@ -788,7 +780,6 @@
 					</reportSet>
 				</reportSets>
 				<configuration>
-					<debug>${debug}</debug>
 					<stylesheet>java</stylesheet>
 					<show>protected</show>
 					<useStandardDocletOptions>true</useStandardDocletOptions>
@@ -863,6 +854,10 @@
 					<xmlOutput>true</xmlOutput>
 					<onlyAnalyze>nl.geodienstencentrum.*</onlyAnalyze>
 				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
 			</plugin>
 		</plugins>
 	</reporting>
