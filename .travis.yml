@@ -78,12 +78,12 @@ before_install:
 
 install:
   # install without any testing to get dependencies in place
-  - mvn install -Dmaven.test.skip=true -B -V -fae
+  - mvn install -Dmaven.test.skip=true -B -V -fae -Dmaven.javadoc.skip=true
 
 script:
   - unset GEM_PATH
   # execute unit and integration tests
-  - mvn -e -fae -B -DWatchMojoTestSleeptime=90000 -Dfailsafe.useFile=false clean test verify -Dtest="*,!WatchMojoTest" -Dorg.slf4j.simpleLogger.showDateTime=true
+  - mvn -e -fae -B -DWatchMojoTestSleeptime=90000 -Dfailsafe.useFile=false clean test verify -Dtest="*,!WatchMojoTest" -Dorg.slf4j.simpleLogger.showDateTime=true -Dmaven.javadoc.skip=true
   - if [ "$TRAVIS_JDK_VERSION" == "openjdk8" ] && [ "$VERSION" == "3.6.0" ]; then
          mvn javadoc:javadoc;
     fi
@@ -107,7 +107,7 @@ after_success:
         echo -n "Not deploying snapshot artifact. ";
     fi
   - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.6.0" ] &&
-       [ "$TRAVIS_JDK_VERSION" == "openjdk11" ] &&
+       [ "$TRAVIS_JDK_VERSION" == "openjdk8" ] &&
        [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
           echo "Attempt to deploy maven site";
           travis_wait 30 mvn -e -fae -B site-deploy --settings .travis/settings.xml;
