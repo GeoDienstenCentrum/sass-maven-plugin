@@ -155,7 +155,7 @@
 		<github.password />
 		<github.site.dryRun>false</github.site.dryRun>
 		<skipUnitTests>false</skipUnitTests>
-		<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
+		<maven-javadoc-plugin.version>3.1.0</maven-javadoc-plugin.version>
 		<versions-maven-plugin.version>2.7</versions-maven-plugin.version>
 		<maven-plugin-plugin.version>3.6.0</maven-plugin-plugin.version>
 		<maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
