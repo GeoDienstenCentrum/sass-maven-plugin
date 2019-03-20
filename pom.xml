@@ -392,6 +392,13 @@
 				<plugin>
 					<artifactId>maven-checkstyle-plugin</artifactId>
 					<version>${maven-checkstyle-plugin.version}</version>
+					<dependencies>
+						<dependency>
+							<groupId>com.puppycrawl.tools</groupId>
+							<artifactId>checkstyle</artifactId>
+							<version>8.18</version>
+						</dependency>
+					</dependencies>
 				</plugin>
 				<plugin>
 					<artifactId>maven-pmd-plugin</artifactId>
@@ -788,7 +795,6 @@
 					<detectLinks>true</detectLinks>
 					<fixClassComment>true</fixClassComment>
 					<fixTags>all</fixTags>
-					<javadocVersion>${project.build.sourceVersion}</javadocVersion>
 					<packagesheader>${project.artifactId}</packagesheader>
 					<tags>
 						<tag>
