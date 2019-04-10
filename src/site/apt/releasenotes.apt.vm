@@ -29,9 +29,9 @@ ${project.name} ${project.version} Release Notes
   Please check the {{{/${project.artifactId}/dependencies.html#provided}full dependencies}}
   to find out about the specific Sass and other transitive dependencies included in this release.
 
-** New
+~~ ** New
  
-~~  * Require Maven 3.3.9
+~~  * 
 
 ~~  []
 
@@ -43,12 +43,12 @@ ${project.name} ${project.version} Release Notes
 ~~  * Update SCSS-Lint to version ${project.properties.get("scss-lint.version")}, please check
 ~~     the {{{https://github.com/brigade/scss-lint/blob/master/CHANGELOG.md}SCSS-Lint changelog}}
 
-~~  * Update JRuby to ${project.properties.get("jruby.version")}
-~~
-~~  * Update Sass to version ${project.properties.get("sass.version")}, please check
-~~     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
-~~
-~~  []
+  * Update JRuby to ${project.properties.get("jruby.version")}
+
+  * Update Sass to version ${project.properties.get("sass.version")}, please check
+     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
+
+  []
 
 * 3.7.1 Release Notes
 
