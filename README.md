@@ -1,6 +1,9 @@
 sass-maven-plugin
 =================
 
+**ARCHIVED** Version 3.7.2 is likely the final and last release of this plugin as (Ruby) Sass has reached End of Life.
+
+
 A Maven Plugin to compile and lint Sass (scss) files.
 
 For more details: https://GeoDienstenCentrum.github.io/sass-maven-plugin/plugin-info.html

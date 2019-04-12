@@ -14,7 +14,8 @@
 
 ${project.name} ${project.version} Release Notes
 
-  These are the release notes for ${project.name} version ${project.version}.
+  These are the release notes for ${project.name} version ${project.version}. 
+  <<NOTE>> 3.7.2 is likely the final and last release as (Ruby) Sass has reached End of Life.
 
 %{toc|section=1|fromDepth=2|toDepth=2}
 
@@ -35,19 +36,34 @@ ${project.name} ${project.version} Release Notes
 
 ~~  []
 
-** Enhancements and Fixes
+~~ ** Enhancements and Fixes
 
 ~~  * Update Bourbon to version ${project.properties.get("bourbon.version")}, please check the
 ~~     {{{https://github.com/thoughtbot/bourbon/blob/master/CHANGELOG.md}Bourbon changelog}}
 ~~
 ~~  * Update SCSS-Lint to version ${project.properties.get("scss-lint.version")}, please check
 ~~     the {{{https://github.com/brigade/scss-lint/blob/master/CHANGELOG.md}SCSS-Lint changelog}}
+~~
+~~  * Update JRuby to ${project.properties.get("jruby.version")}
+~~
+~~  * Update Sass to version ${project.properties.get("sass.version")}, please check
+~~     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
+~~
+~~  []
+  
+* 3.7.2 Release Notes
 
-  * Update JRuby to ${project.properties.get("jruby.version")}
+  This release features Bourbon version 5.1.0 and Sass version 3.7.4 running on JRuby 9.2.7.0. 
+  A complete list of issues can be found in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A3.7.1+is%3Aclosed}milestone 3.7.2}}.
 
-  * Update Sass to version ${project.properties.get("sass.version")}, please check
-     the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
+** Enhancements and Fixes
 
+  * Update JRuby to 9.2.7.0
+  
+  * Update Sass to version 3.7.4, please check
+    the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
+  
   []
 
 * 3.7.1 Release Notes
@@ -58,9 +74,9 @@ ${project.name} ${project.version} Release Notes
 
 ** Enhancements and Fixes
 
-  * Update JRuby to ${project.properties.get("jruby.version")}
+  * Update JRuby to9.2.5.0
 
-  * Update Sass to version ${project.properties.get("sass.version")}, please check
+  * Update Sass to version 3.7.3, please check
      the {{{http://sass-lang.com/documentation/file.SASS_CHANGELOG.html}Sass changelog}}
 
   []
